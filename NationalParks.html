@@ -5,27 +5,69 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GreenGaze</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="styles/parks.css">
 </head>
 
-<header>
-  <nav class="navbar bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="images/mountainpng.png" alt="Logo" width="50" height="35" class="d-inline-block align-text-top">
-        GreenGaze
-      </a>
-    </div>
-  </nav>
-</header>
+ <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/mountainpng.png" alt="Logo" width="50" height="35" class="align-text-top">
+          GreenGaze
+        </a>
+      </div>
+    </nav>
+  </header>
 
 <body>
+
   <main>
-    <h1>National Parks</h1>
+
+    <div class="container">
+      <h1 style="color: white;">National Parks Search:</h1>
+      <h5 style="margin-top: 10px; color: white">Search by Location</h5>
+      <select id="locationDropdown">
+        <option value="" selected>Choose a location</option>
+      </select><br>
+
+      <h5 style="margin-top: 10px; color: white">Search by Park Type</h5>
+      <select id="parkTypeDropdown">
+        <option value="" selected>Choose a park type</option>
+      </select><br>
+
+      <div id="nationalParkDetails" style="display: none; margin-top: 10px; color: white;">
+        <h2>National Park Details</h2>
+        <p><strong>Location ID:</strong> <label id="locationId"></label></p>
+        <p><strong>Location Name:</strong> <label id="locationName"></label></p>
+        <p><strong>Address:</strong> <label id="locationAddress"></label></p>
+        <p><strong>City:</strong> <label id="locationCity"></label></p>
+        <p><strong>State:</strong> $<label id="locationState"></label></p>
+        <p><strong>Zip Code:</strong> <label id="locationZipCode"></label></p>
+        <p><strong>Phone:</strong> $<label id="locationPhone"></label></p>
+        <p><strong>Fax:</strong> <label id="locationFax"></label></p>
+        <p><strong>Latitude:</strong> <label id="locationLatitude"></label></p>
+        <p><strong>Longitude:</strong> <label id="locationLongitude"></label></p>
+        <p><strong>Location:</strong> <label id="locationCoordinates"></label></p>
+      </div>
+    </div>
+
+
   </main>
 
+  <footer>
+    <div
+      style="text-align: center; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: black;">
+      <a href="https://github.com/Dgonza19/Capstone2"><img src="images/githubicon.png" /></a>
+      <br>
+      GREENGAZE © 2023
+    </div>
+  </footer>
 
+
+  <script src="scripts/locationData.js"></script>
+  <script src="scripts/parkTypeData.js"></script>
   <script src="scripts/nationalParkData.js"></script>
 </body>
 
