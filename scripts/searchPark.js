@@ -16,7 +16,11 @@ function init() {
 
 };
 
-// This function should help the dropdown display the array information
+// This function should help the dropdown display the array information from nationalParksArray file.
+// I start with calling the function getParkInfoArray() and storing the info in var. parksArray.
+// Then the for loop iterates over each element in the parksArray.
+// the let newOption creates an HTML element, which will look for the state content in park.
+// the appendChild, appends the created option element
 function populateLocationDropdown() {
 
     let parksArray = getParkInfoArray();
@@ -37,8 +41,6 @@ function populateParkTypeDropdown() {
         parkTypeDropdown.appendChild(newOption);
     }
 };
-
-////////////
 
 // this function grabs the info from nationalParkArray and loops through them using a for..of loop
 function getParkInfoArray() {
@@ -68,12 +70,10 @@ function getParkTypeData() {
 
     uniqueParkTypes.sort();
 
-    return uniqueParkTypes;
+    return parkTypesArray;
 };
 
-////////////
-
-function addLocationToContainer(location) {
+function addLocationToContainer(location,) {
 
     let accordionItemDiv = document.createElement("div");
     accordionItemDiv.className = "accordion-item";
@@ -135,14 +135,27 @@ function addLocationToContainer(location) {
 function searchBtnClicked() {
     parkSearchContainer.innerHTML = "";
 
-    let selectedState = locationDropdown.value;
-    //this filters parks based on the selected state
-    //chose to use filter instead of find, so that it would display all the parks
-    let parksInSelectedState = nationalParksArray.filter(location => location.State === selectedState);
+    let selectedLocation = locationDropdown.value;
+    let selectedParkType = parkTypeDropdown.value;
 
-    //this adds each park to the container
-    for (let park of parksInSelectedState) {
-        addLocationToContainer(park);
+    if (selectedLocation) {
+        // Search by location
+        let parksInLocation = nationalParksArray.filter(park => park.State === selectedLocation);
+
+        for (let park of parksInLocation) {
+            addLocationToContainer(park);
+        }
     }
-}
+
+    if (selectedParkType) {
+        // Search by park type in the name (case-sensitive)
+        for (let park of nationalParksArray) {
+            if (park.LocationName.includes(selectedParkType)) {
+                addLocationToContainer(park, selectedParkType);
+            }
+        }
+    }
+};
+
+
 
