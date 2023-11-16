@@ -5,25 +5,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GreenGaze</title>
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="styles/parks.css">
 </head>
 
- <header>
-    <nav class="navbar bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
-          <img src="images/mountainpng.png" alt="Logo" width="50" height="35" class="align-text-top">
-          GreenGaze
-        </a>
-      </div>
-    </nav>
-  </header>
-
 <body>
+  <div>
 
-  <main>
+    <header>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
+            <img src="images/mountainpng.png" alt="Logo" width="50" height="35" class="align-text-top">
+            GreenGaze
+          </a>
+        </div>
+      </nav>
+    </header>
 
     <div class="container">
       <h1 style="color: white;">National Parks Search:</h1>
@@ -36,39 +35,65 @@
       <select id="parkTypeDropdown">
         <option value="" selected>Choose a park type</option>
       </select><br>
-
-      <div id="nationalParkDetails" style="display: none; margin-top: 10px; color: white;">
-        <h2>National Park Details</h2>
-        <p><strong>Location ID:</strong> <label id="locationId"></label></p>
-        <p><strong>Location Name:</strong> <label id="locationName"></label></p>
-        <p><strong>Address:</strong> <label id="locationAddress"></label></p>
-        <p><strong>City:</strong> <label id="locationCity"></label></p>
-        <p><strong>State:</strong> $<label id="locationState"></label></p>
-        <p><strong>Zip Code:</strong> <label id="locationZipCode"></label></p>
-        <p><strong>Phone:</strong> $<label id="locationPhone"></label></p>
-        <p><strong>Fax:</strong> <label id="locationFax"></label></p>
-        <p><strong>Latitude:</strong> <label id="locationLatitude"></label></p>
-        <p><strong>Longitude:</strong> <label id="locationLongitude"></label></p>
-        <p><strong>Location:</strong> <label id="locationCoordinates"></label></p>
-      </div>
+      <button id="searchBtn">search</button>
     </div>
 
+  </div>
 
-  </main>
+
+  <div id="parkSearchContainer" class="accordion accordion-flush">
+    <!-- <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button 
+                    class="accordion-button collapsed" 
+                    type="button" 
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne" 
+                    aria-expanded="false" 
+                    aria-controls="flush-collapseOne">
+                        I'm reading a book on anti-gravity.
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" 
+                class="accordion-collapse collapse"
+                    data-bs-parent="#parkSearchContainer">
+                    <div class="accordion-body">
+                        It's impossible to put down!
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Did you hear about the guy who invented Lifesavers?
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                    data-bs-parent="#jokesContainer">
+                    <div class="accordion-body">He made a mint!</div>
+                </div>
+            </div> -->
+  </div>
+
 
   <footer>
     <div
       style="text-align: center; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: black;">
-      <a href="https://github.com/Dgonza19/Capstone2"><img src="images/githubicon.png" /></a>
+      <a href="https://github.com/Dgonza19/Capstone2"><img src="images/githubicon.png" alt="github icon"></a>
       <br>
-      GREENGAZE © 2023
+      GREENGAZE/ YEARUP CAPSTONE2 © 2023
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
 
   <script src="scripts/locationData.js"></script>
   <script src="scripts/parkTypeData.js"></script>
   <script src="scripts/nationalParkData.js"></script>
+  <script src="scripts/searchPark.js"></script>
 </body>
 
 </html>
