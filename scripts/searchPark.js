@@ -20,7 +20,11 @@ function init() {
 // I start with calling the function getParkInfoArray() and storing the info in var. parksArray.
 // Then the for loop iterates over each element in the parksArray.
 // the let newOption creates an HTML element, which will look for the state content in park.
-// the appendChild, appends the created option element
+// the appendChild, appends the created option element to HTMl element called locationsDropdown(line 7).
+
+// In summary, the purpose of this function is to populate a dropdown list 
+// with options representing the states of parks.
+
 function populateLocationDropdown() {
 
     let parksArray = getParkInfoArray();
