@@ -57,11 +57,11 @@ function addMtnInfoToContainer(information) {
   accordionBody.className = "accordion-body";
 
   let accordionBodyHTML = `
-      <p><strong>Name:</strong> ${information.name}</p>
-      <p><strong>Elevation:</strong> ${information.elevation}</p>
-      <p><strong>Effort:</strong> ${information.effort}</p>
-      <img src="images/${information.imagePath}" alt="${information.name}" style="max-width: 100%;">
-      <p><strong>Desc:</strong> ${information.desc}</p>
+      <p><strong>Name:</strong><br> ${information.name}</p>
+      <p><strong>Elevation:</strong><br> ${information.elevation}</p>
+      <p><strong>Effort:</strong><br> ${information.effort}</p>
+      <img src="${information.img} style="max-width: 100%;"><br>
+      <p><strong>Desc:</strong><br> ${information.desc}</p>
       <p><strong>Coords:</strong></p>
       <p><strong></strong> ${information.coords.lat}, ${information.coords.lng}</p>
   `;

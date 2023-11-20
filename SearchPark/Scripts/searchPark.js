@@ -33,7 +33,7 @@ function populateLocationDropdown() {
         let newOption = new Option(states.State);
         locationDropdown.appendChild(newOption);
     }
-
+    locationDropdown.value = "";
 };
 
 // This function is very similar to the one above (line 28).
@@ -47,7 +47,9 @@ function populateParkTypeDropdown() {
         let newOption = new Option(parkType);
         parkTypeDropdown.appendChild(newOption);
     }
+    parkTypeDropdown.value = "";
 };
+
 
 // Declare the function.
 // Then I created an empty array called locationInfo to store unique state info.
@@ -59,6 +61,10 @@ function populateParkTypeDropdown() {
 // extract unique state information, sort it alphabetically, and then return the entire array of national parks.
 
 function getParkInfoArray() {
+    locationDropdown.innerHTML = "";
+
+    let defaultOption = new Option("Choose a location", "");
+    locationDropdown.appendChild(defaultOption);
 
     let locationInfo = [];
     for (let parkInfo of nationalParksArray) {
@@ -72,12 +78,17 @@ function getParkInfoArray() {
     // I changed it from return locationInfo to nationalParksArray so that it would
     //return all parks and not just unique states.
     return nationalParksArray;
+    
 };
 
 // This function is similiar to the one above (line 62).
 // with the exceptiong that it returns parkTypeArray and it is utilized for user to search through park type.
 
 function getParkTypeData() {
+    parkTypeDropdown.innerHTML = "";
+    
+    let defaultOption = new Option("Choose a park type", "");
+    parkTypeDropdown.appendChild(defaultOption);
 
     let uniqueParkTypes = [];
 
@@ -196,6 +207,8 @@ function searchBtnClicked() {
             }
         }
     }
+    locationDropdown.value = "";
+    parkTypeDropdown.value = "";
 };
 
 

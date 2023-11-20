@@ -1,0 +1,38 @@
+body {
+  background-color: #2e3d49;
+  background-image: url("../images/mntwallpaper.png");
+  background-repeat: repeat-y;
+  color: #ffffff;
+  font-family: 'Times New Roman', Times, serif;
+  max-height: fit-content;
+};
+
+.container {
+  background-color: white;
+  border-radius: 2em;
+  color: #2e3d49;
+  font-family:'Times New Roman', Times, serif;
+  text-align: center;
+  width: 70em;
+  height: 25em;
+  padding: 2em;
+  margin-top: 3em;
+  box-shadow: 20px 20px 10px rgb(0, 0, 0);
+}
+
+h5 {
+  margin-top: 5px;
+}
+
+
+footer {
+  background-color: #ffffff;
+  font-family: 'Times New Roman', Times, serif;
+  color: #2e3d49;
+  padding: 10px 0;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  height:fit-content;
+  bottom: 0;
+}
